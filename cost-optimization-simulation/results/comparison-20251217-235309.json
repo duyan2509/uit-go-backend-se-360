@@ -1,0 +1,529 @@
+{
+  "test_duration_seconds": 60.0,
+  "test_duration_hours": 0.016666666666666666,
+  "platforms": {
+    "aca": {
+      "platform": "Azure Container Apps (ACA)",
+      "duration_seconds": 60.0,
+      "duration_hours": 0.016666666666666666,
+      "service_costs": [
+        {
+          "service": "api-gateway",
+          "vcpu_seconds": 0.1235,
+          "memory_gb_seconds": 11.64453125,
+          "vcpu_cost": 1.482e-06,
+          "memory_cost": 1.7466796875e-05,
+          "additional_cost": 0.0,
+          "total_cost": 1.8948796875e-05,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:09Z",
+              "end_time": "2025-12-17T16:54:03Z"
+            }
+          ]
+        },
+        {
+          "service": "user-service",
+          "vcpu_seconds": 0.002,
+          "memory_gb_seconds": 8.859375,
+          "vcpu_cost": 2.4e-08,
+          "memory_cost": 1.32890625e-05,
+          "additional_cost": 0.0,
+          "total_cost": 1.33130625e-05,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:10Z",
+              "end_time": "2025-12-17T16:54:05Z"
+            }
+          ]
+        },
+        {
+          "service": "driver-service",
+          "vcpu_seconds": 0.008499999999999999,
+          "memory_gb_seconds": 5.9443359375,
+          "vcpu_cost": 1.0199999999999999e-07,
+          "memory_cost": 8.91650390625e-06,
+          "additional_cost": 0.0,
+          "total_cost": 9.01850390625e-06,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:12Z",
+              "end_time": "2025-12-17T16:54:07Z"
+            }
+          ]
+        },
+        {
+          "service": "trip-service",
+          "vcpu_seconds": 0.0485,
+          "memory_gb_seconds": 14.5966796875,
+          "vcpu_cost": 5.82e-07,
+          "memory_cost": 2.189501953125e-05,
+          "additional_cost": 0.0,
+          "total_cost": 2.247701953125e-05,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:14Z",
+              "end_time": "2025-12-17T16:54:09Z"
+            }
+          ]
+        },
+        {
+          "service": "matching-service",
+          "vcpu_seconds": 0.4045000000000001,
+          "memory_gb_seconds": 15.4599609375,
+          "vcpu_cost": 4.854000000000001e-06,
+          "memory_cost": 2.318994140625e-05,
+          "additional_cost": 0.0,
+          "total_cost": 2.804394140625e-05,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:16Z",
+              "end_time": "2025-12-17T16:54:11Z"
+            }
+          ]
+        },
+        {
+          "service": "notification-service",
+          "vcpu_seconds": 0.03,
+          "memory_gb_seconds": 13.767578125,
+          "vcpu_cost": 3.6e-07,
+          "memory_cost": 2.06513671875e-05,
+          "additional_cost": 0.0,
+          "total_cost": 2.10113671875e-05,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:18Z",
+              "end_time": "2025-12-17T16:54:13Z"
+            }
+          ]
+        }
+      ],
+      "total_cost": 0.00011281269140625,
+      "cost_per_hour": 0.006768761484375,
+      "monthly_projection": {
+        "hourly_cost_baseline": 0.006768761484375,
+        "peak_hours_per_day": 8,
+        "off_peak_hours_per_day": 16,
+        "peak_multiplier": 2.0,
+        "average_hourly_cost": 0.0090250153125,
+        "projected_monthly_cost": 6.498011025,
+        "projected_annual_cost": 77.9761323
+      }
+    },
+    "aci": {
+      "platform": "Azure Container Instances (ACI)",
+      "duration_seconds": 60.0,
+      "duration_hours": 0.016666666666666666,
+      "service_costs": [
+        {
+          "service": "api-gateway",
+          "vcpu_seconds": 30.0,
+          "memory_gb_seconds": 60.0,
+          "vcpu_cost": 0.00036,
+          "memory_cost": 9e-05,
+          "additional_cost": 0.0,
+          "total_cost": 0.00045,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:09Z",
+              "end_time": "2025-12-17T16:54:03Z"
+            }
+          ]
+        },
+        {
+          "service": "user-service",
+          "vcpu_seconds": 30.0,
+          "memory_gb_seconds": 60.0,
+          "vcpu_cost": 0.00036,
+          "memory_cost": 9e-05,
+          "additional_cost": 0.0,
+          "total_cost": 0.00045,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:10Z",
+              "end_time": "2025-12-17T16:54:05Z"
+            }
+          ]
+        },
+        {
+          "service": "driver-service",
+          "vcpu_seconds": 30.0,
+          "memory_gb_seconds": 60.0,
+          "vcpu_cost": 0.00036,
+          "memory_cost": 9e-05,
+          "additional_cost": 0.0,
+          "total_cost": 0.00045,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:12Z",
+              "end_time": "2025-12-17T16:54:07Z"
+            }
+          ]
+        },
+        {
+          "service": "trip-service",
+          "vcpu_seconds": 30.0,
+          "memory_gb_seconds": 60.0,
+          "vcpu_cost": 0.00036,
+          "memory_cost": 9e-05,
+          "additional_cost": 0.0,
+          "total_cost": 0.00045,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:14Z",
+              "end_time": "2025-12-17T16:54:09Z"
+            }
+          ]
+        },
+        {
+          "service": "matching-service",
+          "vcpu_seconds": 30.0,
+          "memory_gb_seconds": 60.0,
+          "vcpu_cost": 0.00036,
+          "memory_cost": 9e-05,
+          "additional_cost": 0.0,
+          "total_cost": 0.00045,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:16Z",
+              "end_time": "2025-12-17T16:54:11Z"
+            }
+          ]
+        },
+        {
+          "service": "notification-service",
+          "vcpu_seconds": 30.0,
+          "memory_gb_seconds": 60.0,
+          "vcpu_cost": 0.00036,
+          "memory_cost": 9e-05,
+          "additional_cost": 0.0,
+          "total_cost": 0.00045,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:18Z",
+              "end_time": "2025-12-17T16:54:13Z"
+            }
+          ]
+        }
+      ],
+      "total_cost": 0.0027,
+      "cost_per_hour": 0.162,
+      "monthly_projection": {
+        "hourly_cost_baseline": 0.162,
+        "peak_hours_per_day": 8,
+        "off_peak_hours_per_day": 16,
+        "peak_multiplier": 2.0,
+        "average_hourly_cost": 0.216,
+        "projected_monthly_cost": 155.52,
+        "projected_annual_cost": 1866.24
+      }
+    },
+    "aks_spot": {
+      "platform": "Azure Kubernetes Service (AKS) - Spot",
+      "duration_seconds": 60.0,
+      "duration_hours": 0.016666666666666666,
+      "service_costs": [
+        {
+          "service": "api-gateway",
+          "vcpu_seconds": 0.1235,
+          "memory_gb_seconds": 11.64453125,
+          "vcpu_cost": 4.94e-07,
+          "memory_cost": 4.851888020833333e-06,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.0116720125546875,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:09Z",
+              "end_time": "2025-12-17T16:54:03Z"
+            }
+          ]
+        },
+        {
+          "service": "user-service",
+          "vcpu_seconds": 0.002,
+          "memory_gb_seconds": 8.859375,
+          "vcpu_cost": 8e-09,
+          "memory_cost": 3.69140625e-06,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011670366072916667,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:10Z",
+              "end_time": "2025-12-17T16:54:05Z"
+            }
+          ]
+        },
+        {
+          "service": "driver-service",
+          "vcpu_seconds": 0.008499999999999999,
+          "memory_gb_seconds": 5.9443359375,
+          "vcpu_cost": 3.3999999999999993e-08,
+          "memory_cost": 2.476806640625e-06,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011669177473307292,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:12Z",
+              "end_time": "2025-12-17T16:54:07Z"
+            }
+          ]
+        },
+        {
+          "service": "trip-service",
+          "vcpu_seconds": 0.0485,
+          "memory_gb_seconds": 14.5966796875,
+          "vcpu_cost": 1.94e-07,
+          "memory_cost": 6.081949869791666e-06,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011672942616536458,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:14Z",
+              "end_time": "2025-12-17T16:54:09Z"
+            }
+          ]
+        },
+        {
+          "service": "matching-service",
+          "vcpu_seconds": 0.4045000000000001,
+          "memory_gb_seconds": 15.4599609375,
+          "vcpu_cost": 1.6180000000000004e-06,
+          "memory_cost": 6.441650390625e-06,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011674726317057292,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:16Z",
+              "end_time": "2025-12-17T16:54:11Z"
+            }
+          ]
+        },
+        {
+          "service": "notification-service",
+          "vcpu_seconds": 0.03,
+          "memory_gb_seconds": 13.767578125,
+          "vcpu_cost": 1.2e-07,
+          "memory_cost": 5.7364908854166664e-06,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011672523157552083,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:18Z",
+              "end_time": "2025-12-17T16:54:13Z"
+            }
+          ]
+        }
+      ],
+      "control_plane_cost": 0.0016666666666666668,
+      "node_overhead_cost": 0.0003333333333333333,
+      "total_cost": 0.0720317481920573,
+      "cost_per_hour": 4.321904891523437,
+      "monthly_projection": {
+        "hourly_cost_baseline": 4.321904891523437,
+        "peak_hours_per_day": 8,
+        "off_peak_hours_per_day": 16,
+        "peak_multiplier": 2.0,
+        "average_hourly_cost": 5.762539855364583,
+        "projected_monthly_cost": 4149.028695862499,
+        "projected_annual_cost": 49788.344350349995
+      }
+    },
+    "aks_ondemand": {
+      "platform": "Azure Kubernetes Service (AKS) - On-Demand",
+      "duration_seconds": 60.0,
+      "duration_hours": 0.016666666666666666,
+      "service_costs": [
+        {
+          "service": "api-gateway",
+          "vcpu_seconds": 0.1235,
+          "memory_gb_seconds": 11.64453125,
+          "vcpu_cost": 1.6466666666666666e-06,
+          "memory_cost": 1.6172960069444443e-05,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011684486293402779,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:09Z",
+              "end_time": "2025-12-17T16:54:03Z"
+            }
+          ]
+        },
+        {
+          "service": "user-service",
+          "vcpu_seconds": 0.002,
+          "memory_gb_seconds": 8.859375,
+          "vcpu_cost": 2.6666666666666667e-08,
+          "memory_cost": 1.23046875e-05,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011678998020833333,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:10Z",
+              "end_time": "2025-12-17T16:54:05Z"
+            }
+          ]
+        },
+        {
+          "service": "driver-service",
+          "vcpu_seconds": 0.008499999999999999,
+          "memory_gb_seconds": 5.9443359375,
+          "vcpu_cost": 1.1333333333333332e-07,
+          "memory_cost": 8.256022135416667e-06,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011675036022135417,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:12Z",
+              "end_time": "2025-12-17T16:54:07Z"
+            }
+          ]
+        },
+        {
+          "service": "trip-service",
+          "vcpu_seconds": 0.0485,
+          "memory_gb_seconds": 14.5966796875,
+          "vcpu_cost": 6.466666666666667e-07,
+          "memory_cost": 2.0273166232638888e-05,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011687586499565972,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:14Z",
+              "end_time": "2025-12-17T16:54:09Z"
+            }
+          ]
+        },
+        {
+          "service": "matching-service",
+          "vcpu_seconds": 0.4045000000000001,
+          "memory_gb_seconds": 15.4599609375,
+          "vcpu_cost": 5.393333333333335e-06,
+          "memory_cost": 2.147216796875e-05,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.01169353216796875,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:16Z",
+              "end_time": "2025-12-17T16:54:11Z"
+            }
+          ]
+        },
+        {
+          "service": "notification-service",
+          "vcpu_seconds": 0.03,
+          "memory_gb_seconds": 13.767578125,
+          "vcpu_cost": 4e-07,
+          "memory_cost": 1.9121636284722223e-05,
+          "additional_cost": 0.011666666666666667,
+          "total_cost": 0.011686188302951388,
+          "replicas": [
+            {
+              "count": 1,
+              "duration_seconds": 60,
+              "start_time": "2025-12-17T16:53:18Z",
+              "end_time": "2025-12-17T16:54:13Z"
+            }
+          ]
+        }
+      ],
+      "control_plane_cost": 0.0016666666666666668,
+      "node_overhead_cost": 0.0003333333333333333,
+      "total_cost": 0.07210582730685763,
+      "cost_per_hour": 4.326349638411458,
+      "monthly_projection": {
+        "hourly_cost_baseline": 4.326349638411458,
+        "peak_hours_per_day": 8,
+        "off_peak_hours_per_day": 16,
+        "peak_multiplier": 2.0,
+        "average_hourly_cost": 5.76846618454861,
+        "projected_monthly_cost": 4153.295652875,
+        "projected_annual_cost": 49839.547834499994
+      }
+    }
+  },
+  "comparison": {
+    "cheapest_platform": "ACA",
+    "cheapest_cost": 0.00011281269140625,
+    "cost_differences": {
+      "ACA": 0.0,
+      "ACI": 0.0025871873085937503,
+      "AKS Spot": 0.07191893550065104,
+      "AKS On-Demand": 0.07199301461545138
+    },
+    "savings": {
+      "ACA": {
+        "vs_cheapest": 0.0,
+        "savings_percentage": 0.0
+      },
+      "ACI": {
+        "vs_cheapest": 0.0025871873085937503,
+        "savings_percentage": 95.8217521701389
+      },
+      "AKS Spot": {
+        "vs_cheapest": 0.07191893550065104,
+        "savings_percentage": 99.84338476541556
+      },
+      "AKS On-Demand": {
+        "vs_cheapest": 0.07199301461545138,
+        "savings_percentage": 99.8435456666683
+      }
+    }
+  },
+  "summary": {
+    "total_services": 6,
+    "services_analyzed": [
+      "api-gateway",
+      "user-service",
+      "driver-service",
+      "trip-service",
+      "matching-service",
+      "notification-service"
+    ]
+  }
+}

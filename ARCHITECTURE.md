@@ -125,5 +125,5 @@ Redis được sử dụng để xử lý dữ liệu real-time và các truy v�
 - Hệ thống sử dụng **gRPC** để giao tiếp nội bộ giữa các service nhằm tối ưu hiệu suất và độ trễ nhờ HTTP/2 và Protobuf.  
 - Các module `Trip` và `Driver` áp dụng **Event Sourcing**, giúp đảm bảo tính toàn vẹn dữ liệu và hỗ trợ xử lý bất đồng bộ qua Kafka.  
 - **Redis Geospatial** được chọn để thực hiện các truy vấn vị trí real-time nhanh chóng, giảm tải cho cơ sở dữ liệu quan hệ.  
-
+- Thay vì triển khai trực tiếp các service lên đám mây để tính toán chi phí thực tế, nhóm đã mô phỏng trên môi trường local bằng Docker để chạy các microservices, thu thập metrics sử dụng tài nguyên (vCPU-seconds và Memory GB-seconds) qua Docker stats mỗi 10 giây, sau đó áp dụng bảng giá Azure để ước tính chi phí hàng tháng dựa trên mô hình peak/off-peak (30% idle). Quyết định này giúp giảm chi phí thực nghiệm, tập trung vào phân tích trade-offs (chi phí thấp hơn nhưng thiếu yếu tố thực tế như network latency), phù hợp với giai đoạn prototype của Module E (FinOps).
 

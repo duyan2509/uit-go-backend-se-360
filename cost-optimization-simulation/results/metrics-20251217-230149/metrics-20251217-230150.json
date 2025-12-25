@@ -1,0 +1,194 @@
+{
+  "start_time": "2025-12-17T16:01:50Z",
+  "duration_seconds": 60,
+  "interval_seconds": 10,
+  "services": {},
+  "collected_metrics": {
+    "2025-12-17T16:01:50Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.11,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.2171875,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.41
+    },
+    "2025-12-17T16:01:51Z": {
+      "service": "user-service",
+      "cpu_percent": 0.0,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.12900390625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.84
+    },
+    "2025-12-17T16:01:53Z": {
+      "service": "driver-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.092998046875,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.61
+    },
+    "2025-12-17T16:01:55Z": {
+      "service": "trip-service",
+      "cpu_percent": 0.38,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.36240234375,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.36
+    },
+    "2025-12-17T16:01:57Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.62,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.37490234375,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.44
+    },
+    "2025-12-17T16:01:59Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.3,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.32275390625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.1
+    },
+    "2025-12-17T16:02:01Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.11,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.2634765625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.71
+    },
+    "2025-12-17T16:02:03Z": {
+      "service": "user-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.12900390625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.84
+    },
+    "2025-12-17T16:02:05Z": {
+      "service": "trip-service",
+      "cpu_percent": 0,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0
+    },
+    "2025-12-17T16:02:06Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.35,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.37509765625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.44
+    },
+    "2025-12-17T16:02:07Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.25,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.32275390625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.1
+    },
+    "2025-12-17T16:02:19Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.1,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.2634765625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.71
+    },
+    "2025-12-17T16:02:20Z": {
+      "service": "user-service",
+      "cpu_percent": 0.0,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.12900390625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.84
+    },
+    "2025-12-17T16:02:22Z": {
+      "service": "driver-service",
+      "cpu_percent": 0.0,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.092998046875,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.61
+    },
+    "2025-12-17T16:02:24Z": {
+      "service": "trip-service",
+      "cpu_percent": 0.27,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.3623046875,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.36
+    },
+    "2025-12-17T16:02:26Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.56,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.37509765625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.44
+    },
+    "2025-12-17T16:02:28Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.19,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.32275390625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.1
+    },
+    "2025-12-17T16:02:40Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.09,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.2634765625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.71
+    },
+    "2025-12-17T16:02:41Z": {
+      "service": "user-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.12900390625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.84
+    },
+    "2025-12-17T16:02:43Z": {
+      "service": "driver-service",
+      "cpu_percent": 0.0,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.0930078125,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.61
+    },
+    "2025-12-17T16:02:45Z": {
+      "service": "trip-service",
+      "cpu_percent": 0.27,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.3623046875,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.36
+    },
+    "2025-12-17T16:02:47Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.6,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.375390625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.44
+    },
+    "2025-12-17T16:02:49Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.16,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.32275390625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.1
+    }
+  },
+  "end_time": "2025-12-17T16:03:01Z",
+  "total_samples": 3
+}

@@ -1,0 +1,8 @@
+    "2025-12-16T06:12:30Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.12,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .24570312500000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.60
+    },

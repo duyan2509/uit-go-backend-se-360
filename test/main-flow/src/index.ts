@@ -3,11 +3,11 @@ import fs from 'fs';
 import path from 'path';
 
 const BASE_URL = 'http://localhost:9000/api';
-const TOTAL_USERS = 70;
+const TOTAL_USERS = 3000;
 const USER_PASSWORD = 'Test123!@#';
 const ADMIN_EMAIL = 'admin@uitgo.com';
 const ADMIN_PASSWORD = 'Admin@123';
-const DRIVERS_TO_CREATE = 20; // Số tài xế cần tạo
+const DRIVERS_TO_CREATE = 1200; // Số tài xế cần tạo
 
 interface User {
   userId: string;
@@ -120,7 +120,7 @@ async function getPendingDriverRegistrations(adminJwt: string): Promise<any[]> {
       params: {
         Status: 'Pending',
         Page: 1,
-        Size: 20,
+        Size: DRIVERS_TO_CREATE,
       },
     },);
     // Lọc chỉ những cái đang Pending
@@ -196,8 +196,8 @@ async function main() {
     data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
     console.log(`Đã load ${data.users.length} users và admin JWT`);
   } else {
-    // Nếu chưa có thì tạo mới 70 user như cũ
-    console.log('Không tìm thấy file → tạo mới 70 user...');
+    // Nếu chưa có thì tạo mới ${TOTAL_USERS} user như cũ
+    console.log(`Không tìm thấy file → tạo mới ${TOTAL_USERS} user...`);
     for (let i = 1; i <= TOTAL_USERS; i++) {
       const email = `test${i}@example.com`;
       await registerUser(email, USER_PASSWORD);
@@ -217,7 +217,7 @@ async function main() {
   // fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
 
 
-  // Bước 2: Lấy 20 user đầu tiên làm tài xế
+  // Bước 2: Lấy ${DRIVERS_TO_CREATE} user đầu tiên làm tài xế
   const driverCandidates = data.users.slice(0, DRIVERS_TO_CREATE);
   for (const user of driverCandidates) {
     await registerAsDriver(user);

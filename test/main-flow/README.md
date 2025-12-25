@@ -38,10 +38,10 @@ npx tsx src/index.ts
 ```
 
 ### 3. Chạy test thật
-> **Lưu ý quan trọng:** Hiện tại trong file `k6-booking-test.js`, phần **Load Test đã bị comment** (chỉ còn Smoke Test chạy được).  
+> **Lưu ý quan trọng:** Hiện tại trong file `user-booking-test.ts`, phần **Load Test đã bị comment** (chỉ còn Smoke Test chạy được).  
 > Nếu bạn muốn bật Load Test → bỏ comment phần `load` trong `scenarios` (xem hướng dẫn bên dưới).
 ```bash
-k6 run k6-booking-test.js
+k6 run user-booking-test.ts
 ```
 
 

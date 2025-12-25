@@ -86,7 +86,7 @@ if docker ps --format "{{.Names}}" | grep -q "api-gateway"; then
     echo -e "${YELLOW}⚠ Services already running, skipping docker-compose up${NC}"
 else
     echo "Starting services with docker-compose..."
-    docker-compose up -d
+    docker compose up -d
     echo "Waiting for services to be healthy..."
     sleep 30
 fi

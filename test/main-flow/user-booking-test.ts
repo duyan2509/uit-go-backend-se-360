@@ -1,4 +1,4 @@
-import http from 'k6/http';
+import http, { Response } from 'k6/http';
 import { check, sleep } from 'k6';
 import { Rate, Trend, Counter } from 'k6/metrics';
 import { SharedArray, Atomic } from 'k6/data';
@@ -13,16 +13,41 @@ interface User {
   driverId?: string;
 }
 
+interface SeedingResult {
+  users: User[];
+  drivers: User[]; // Danh sách tài xế đã được duyệt
+  admin: {
+    jwt: string;
+  };
+}
+
+interface TripResponse {
+  id: number;
+  riderId: string;
+  driverId: string | null;
+  sourceLat: number;
+  sourceLng: number;
+  destLat: number;
+  destLng: number;
+  fare: number;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 
 // Đọc dữ liệu từ file seeding-data.json (đã có 70 user + 20 driver)
-const seedingData = new SharedArray('seedingData', function () {
-  const data = JSON.parse(open('./seeding-data.json'));
-  const passengers = data.users.filter(u => !u.isDriver); // chỉ lấy passenger
-  const drivers = data.users.filter(u => u.isDriver);    // 20 driver
+const seedingData = new SharedArray<{ passengers: User[]; drivers: User[] }>('seedingData', function () {
+  const data: SeedingResult = JSON.parse(open('./seeding-data.json'));
+  const passengers = data.users.filter((u: User) => !u.isDriver); // chỉ lấy passenger
+  const drivers = data.users.filter((u: User) => u.isDriver);    // 20 driver
   return [{ passengers, drivers }];
 });
 
-const pendingTrips = new SharedArray('pendingTrips', () => []);
+const pendingTrips = new SharedArray<{ tripId: string; candidates: string[]; accepted: boolean }>(
+  'pendingTrips',
+  () => [],
+);
 
 
 const { passengers, drivers } = seedingData[0];
@@ -49,21 +74,34 @@ export const options = {
       executor: 'constant-vus',
       vus: 20, // 20 driver cùng poll
       duration: '30s',
-      exec: 'driverAcceptTrip',
+      exec: 'smokeDriverAcceptTrip',
       startTime: '5s',
     },
     // Load Test: Tạo tổng 1000 req trong 2'
-    // load: {
-    //   executor: 'constant-arrival-rate',
-    //   rate: 8,              // 8 requests mỗi giây
-    //   timeUnit: '1s',       // trong 1 giây
-    //   duration: '2m',       // chạy trong 2 phút
-    //   preAllocatedVUs: 20,  // Số VUs khởi tạo sẵn
-    //   maxVUs: 50,           // Số VUs tối đa nếu cần
-    //   tags: { test_type: 'load' },
-    //   exec: 'loadTest',
-    //   startTime: '30s',     // Bắt đầu sau smoke test
-    // },
+    load_booking: {
+      executor: 'constant-arrival-rate',     // Giữ nguyên – tốt nhất để kiểm soát RPS chính xác
+      rate: 15,                              // 15 bookings mỗi giây → thực tế cao điểm
+      timeUnit: '1s',
+      duration: '20m',                       // Chạy đúng 20 phút như bạn muốn
+      preAllocatedVUs: 200,                  // Khởi tạo sẵn 200 VU → phản hồi nhanh ngay từ giây đầu
+      maxVUs: 500,                           // Tối đa 500 VU nếu cần (với 1800 user → dư sức)
+      tags: { test_type: 'load' },
+      exec: 'smokeBooking',                   // Hàm đặt xe
+      startTime: '30s',                      // Bắt đầu sau khi smoke test xong
+    },
+
+    load_accept: {
+      executor: 'constant-arrival-rate',     // Giữ nguyên – tốt nhất để kiểm soát RPS chính xác
+      rate: 15,                              // 15 bookings mỗi giây → thực tế cao điểm
+      timeUnit: '1s',
+      duration: '20m',                       // Chạy đúng 20 phút như bạn muốn
+      preAllocatedVUs: 200,                  // Khởi tạo sẵn 200 VU → phản hồi nhanh ngay từ giây đầu
+      maxVUs: 500,                           // Tối đa 500 VU nếu cần (với 1800 user → dư sức)
+      tags: { test_type: 'load' },
+      exec: 'smokeDriverAcceptTrip',                   // Hàm đặt xe
+      startTime: '30s',                      // Bắt đầu sau khi smoke test xong
+    },
+
   },
 
   thresholds: {
@@ -85,7 +123,7 @@ const bookingPayload = {
 };
 
 // Hàm đặt xe
-function bookTrip(user: User) {
+function bookTrip(user: User): Response {
   const payload = JSON.stringify({
     ...bookingPayload,
     riderId: user.userId, // dùng userId thật từ seeding
@@ -99,7 +137,7 @@ function bookTrip(user: User) {
   };
 
   const start = Date.now();
-  const res = http.post(`${BASE_URL}/trips`, payload, params);
+  const res: Response = http.post(`${BASE_URL}/trips`, payload, params);
   const duration = Date.now() - start;
 
   bookingDuration.add(duration);
@@ -110,7 +148,7 @@ function bookTrip(user: User) {
     console.log(`Trip created: ${tripId} by ${user.email}`);
 
     // Giả lập: chọn ngẫu nhiên 3-5 driver gần nhất để offer
-    const shuffled = drivers.sort(() => 0.5 - Math.random());
+    const shuffled: User[] = drivers.sort(() => 0.5 - Math.random());
     const candidates = shuffled.slice(0, randomIntBetween(3, 5));
 
     // Lưu trip vào danh sách chờ accept
@@ -145,7 +183,7 @@ function bookTrip(user: User) {
   return res;
 }
 
-function tryAcceptTrip(driver) {
+function tryAcceptTrip(driver: User): boolean {
   let accepted = false;
 
   for (let i = 0; i < pendingTrips.length; i++) {
@@ -159,7 +197,7 @@ function tryAcceptTrip(driver) {
     if (Atomic.increment(`lock_${trip.tripId}`, 1) > 0) continue; // đã bị lock
 
     // Gọi API accept
-    const res = http.put(`${BASE_URL}/trips/${trip.tripId}/accept`, JSON.stringify({
+    const res: Response = http.put(`${BASE_URL}/trips/${trip.tripId}/accept`, JSON.stringify({
       driverId: driver.userId
     }), {
       headers: {
@@ -187,33 +225,33 @@ function tryAcceptTrip(driver) {
 }
 
 // === FULL FLOW: Đặt xe + Chờ offer + Accept ===
-export function fullBookingFlow(passenger: User) {
+// export function fullBookingFlow(passenger: User) {
 
-  // B1: Đặt xe
-  const result = bookTrip(passenger);
-  if (!result) {
-    sleep(1);
-    return;
-  }
+//   // B1: Đặt xe
+//   const result = bookTrip(passenger);
+//   if (!result) {
+//     sleep(1);
+//     return;
+//   }
 
-  const { tripId } = result;
+//   const { tripId } = result;
 
-  // B2: Giả lập hệ thống đã gửi offer tới 3–5 driver gần nhất
-  // (trong thực tế: backend sẽ gửi FCM, ở đây ta giả lập bằng cách random chọn)
-  const numOffered = 3 + Math.floor(Math.random() * 3); // 3–5 drivers
-  const shuffledDrivers = drivers
-    // .sort(() => 0.5 - Math.random());
-  const offeredDrivers = shuffledDrivers.slice(0, numOffered);
+//   // B2: Giả lập hệ thống đã gửi offer tới 3–5 driver gần nhất
+//   // (trong thực tế: backend sẽ gửi FCM, ở đây ta giả lập bằng cách random chọn)
+//   const numOffered = 3 + Math.floor(Math.random() * 3); // 3–5 drivers
+//   const shuffledDrivers = drivers
+//     // .sort(() => 0.5 - Math.random());
+//   const offeredDrivers = shuffledDrivers.slice(0, numOffered);
 
-  // B3: Chờ 2–5s như thật (tài xế đang xem offer)
-  sleep(2 + Math.random() * 3);
+//   // B3: Chờ 2–5s như thật (tài xế đang xem offer)
+//   sleep(2 + Math.random() * 3);
 
-  // B4: 1 trong số driver accept
-  acceptTrip(tripId, offeredDrivers);
+//   // B4: 1 trong số driver accept
+//   // tryAcceptTrip(tripId, offeredDrivers);
 
-  // Nghỉ ngơi trước iteration tiếp theo
-  sleep(1);
-}
+//   // Nghỉ ngơi trước iteration tiếp theo
+//   sleep(1);
+// }
 
 // Smoke Test: 3 người đặt xe
 export function smokeBooking() {
@@ -228,14 +266,14 @@ export function smokeBooking() {
 //   sleep(Math.random() * 2 + 0.5); // giống người thật
 // }
 
-export function driverAcceptTrip() {
+export function smokeDriverAcceptTrip() {
   const driver = drivers[__VU % drivers.length];
   tryAcceptTrip(driver);
   sleep(0.5); // poll mỗi 0.5s
 }
 
 // Summary đẹp
-export function handleSummary(data) {
+export function handleSummary(data: any) {
   const successCount = data.metrics.booking_success?.values?.count || 0;
   const totalReqs = data.metrics.http_reqs?.values?.count || 0;
 

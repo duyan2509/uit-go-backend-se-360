@@ -1,0 +1,122 @@
+{
+  "duration_seconds": 30,
+  "interval_seconds": 10,
+  "start_time": "2025-12-16T07:10:14Z",
+  "end_time": "2025-12-16T07:11:08Z",
+  "services": {
+    "api-gateway": {
+      "vcpu_seconds": 0.365,
+      "memory_gb_seconds": 8.431640625,
+      "cpu_cores_allocated": 0.5,
+      "memory_gb_allocated": 1.0,
+      "max_cpu_percent": 7.14,
+      "max_memory_gb": 0.2810546875,
+      "avg_cpu_percent": 2.433333333333333,
+      "avg_memory_gb": 0.2810546875,
+      "replicas": [
+        {
+          "count": 1,
+          "duration_seconds": 30,
+          "start_time": "2025-12-16T07:10:14Z",
+          "end_time": "2025-12-16T07:10:47Z"
+        }
+      ],
+      "num_samples": 3
+    },
+    "user-service": {
+      "vcpu_seconds": 0.001,
+      "memory_gb_seconds": 2.85380859375,
+      "cpu_cores_allocated": 0.5,
+      "memory_gb_allocated": 1.0,
+      "max_cpu_percent": 0.01,
+      "max_memory_gb": 0.095166015625,
+      "avg_cpu_percent": 0.006666666666666667,
+      "avg_memory_gb": 0.09512695312500001,
+      "replicas": [
+        {
+          "count": 1,
+          "duration_seconds": 30,
+          "start_time": "2025-12-16T07:10:15Z",
+          "end_time": "2025-12-16T07:10:48Z"
+        }
+      ],
+      "num_samples": 3
+    },
+    "driver-service": {
+      "vcpu_seconds": 0.0005,
+      "memory_gb_seconds": 2.0830078125,
+      "cpu_cores_allocated": 0.5,
+      "memory_gb_allocated": 1.0,
+      "max_cpu_percent": 0.01,
+      "max_memory_gb": 0.06947265625,
+      "avg_cpu_percent": 0.0033333333333333335,
+      "avg_memory_gb": 0.06943359375000001,
+      "replicas": [
+        {
+          "count": 1,
+          "duration_seconds": 30,
+          "start_time": "2025-12-16T07:10:17Z",
+          "end_time": "2025-12-16T07:10:50Z"
+        }
+      ],
+      "num_samples": 3
+    },
+    "trip-service": {
+      "vcpu_seconds": 0.026000000000000002,
+      "memory_gb_seconds": 10.4130859375,
+      "cpu_cores_allocated": 0.5,
+      "memory_gb_allocated": 1.0,
+      "max_cpu_percent": 0.19,
+      "max_memory_gb": 0.34716796875,
+      "avg_cpu_percent": 0.17333333333333334,
+      "avg_memory_gb": 0.34710286458333334,
+      "replicas": [
+        {
+          "count": 1,
+          "duration_seconds": 30,
+          "start_time": "2025-12-16T07:10:19Z",
+          "end_time": "2025-12-16T07:10:52Z"
+        }
+      ],
+      "num_samples": 3
+    },
+    "matching-service": {
+      "vcpu_seconds": 0.038000000000000006,
+      "memory_gb_seconds": 9.896484375,
+      "cpu_cores_allocated": 0.5,
+      "memory_gb_allocated": 1.0,
+      "max_cpu_percent": 0.27,
+      "max_memory_gb": 0.3298828125,
+      "avg_cpu_percent": 0.25333333333333335,
+      "avg_memory_gb": 0.3298828125,
+      "replicas": [
+        {
+          "count": 1,
+          "duration_seconds": 30,
+          "start_time": "2025-12-16T07:10:21Z",
+          "end_time": "2025-12-16T07:10:54Z"
+        }
+      ],
+      "num_samples": 3
+    },
+    "notification-service": {
+      "vcpu_seconds": 0.026500000000000003,
+      "memory_gb_seconds": 10.0634765625,
+      "cpu_cores_allocated": 0.5,
+      "memory_gb_allocated": 1.0,
+      "max_cpu_percent": 0.19,
+      "max_memory_gb": 0.33544921875,
+      "avg_cpu_percent": 0.17666666666666667,
+      "avg_memory_gb": 0.33544921875,
+      "replicas": [
+        {
+          "count": 1,
+          "duration_seconds": 30,
+          "start_time": "2025-12-16T07:10:23Z",
+          "end_time": "2025-12-16T07:10:56Z"
+        }
+      ],
+      "num_samples": 3
+    }
+  }
+}

@@ -67,8 +67,8 @@ collect_service_metrics() {
     # Convert to GB
     local mem_gb=0
     case "$mem_unit" in
-        "KiB") mem_gb=$(echo "$mem_used / 1048576" | bc -l) ;;
-        "MiB") mem_gb=$(echo "$mem_used / 1024" | bc -l) ;;
+        "KiB") mem_gb=$(echo "$mem_used / 1048576" | bc -l | sed 's/^\./0./; s/^-\./-0./') ;;
+        "MiB") mem_gb=$(echo "$mem_used / 1024" | bc -l | sed 's/^\./0./; s/^-\./-0./') ;;
         "GiB") mem_gb=$mem_used ;;
         *) mem_gb=0 ;;
     esac

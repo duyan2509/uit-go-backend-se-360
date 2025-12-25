@@ -1,0 +1,144 @@
+    "2025-12-16T05:58:11Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.15,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .24648437500000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.60
+    },
+    "2025-12-16T05:58:12Z": {
+      "service": "user-service",
+      "cpu_percent": 0.02,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .12763671875000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.83
+    },
+    "2025-12-16T05:58:14Z": {
+      "service": "driver-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .09785156250000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.64
+    },
+    "2025-12-16T05:58:16Z": {
+      "service": "trip-service",
+      "cpu_percent": 0.22,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .30859375000000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.01
+    },
+    "2025-12-16T05:58:18Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.82,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .33671875000000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.19
+    },
+    "2025-12-16T05:58:20Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.86,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .33320312500000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.17
+    },
+    "2025-12-16T05:58:22Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.15,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .24648437500000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.60
+    },
+    "2025-12-16T05:58:24Z": {
+      "service": "user-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .12675781250000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.82
+    },
+    "2025-12-16T05:58:26Z": {
+      "service": "driver-service",
+      "cpu_percent": 0.02,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .09794921875000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.64
+    },
+    "2025-12-16T05:58:28Z": {
+      "service": "trip-service",
+      "cpu_percent": 0.21,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .30859375000000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.01
+    },
+    "2025-12-16T05:58:30Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.38,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .33681640625000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.19
+    },
+    "2025-12-16T05:58:32Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.16,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .33320312500000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.17
+    },
+    "2025-12-16T05:58:44Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.14,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .24648437500000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.60
+    },
+    "2025-12-16T05:58:45Z": {
+      "service": "user-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .12666015625000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.82
+    },
+    "2025-12-16T05:58:47Z": {
+      "service": "driver-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .09785156250000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.64
+    },
+    "2025-12-16T05:58:49Z": {
+      "service": "trip-service",
+      "cpu_percent": 0.20,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .30859375000000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.01
+    },
+    "2025-12-16T05:58:51Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.43,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .33710937500000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.19
+    },
+    "2025-12-16T05:58:53Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.19,
+      "cpu_cores": 0.5,
+      "memory_used_gb": .33320312500000000000,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.17
+    }

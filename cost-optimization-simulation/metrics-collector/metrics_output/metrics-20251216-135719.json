@@ -1,0 +1,154 @@
+{
+  "start_time": "2025-12-16T06:57:19Z",
+  "duration_seconds": 30,
+  "interval_seconds": 10,
+  "services": {},
+  "collected_metrics": {
+    "2025-12-16T06:57:19Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.15,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.245703125,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.6
+    },
+    "2025-12-16T06:57:20Z": {
+      "service": "user-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.095107421875,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.62
+    },
+    "2025-12-16T06:57:22Z": {
+      "service": "driver-service",
+      "cpu_percent": 0.02,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.06947265625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.45
+    },
+    "2025-12-16T06:57:24Z": {
+      "service": "trip-service",
+      "cpu_percent": 0.17,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.3099609375,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.02
+    },
+    "2025-12-16T06:57:26Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.24,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.30703125,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.0
+    },
+    "2025-12-16T06:57:28Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.15,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.33505859375,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.18
+    },
+    "2025-12-16T06:57:30Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.12,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.245703125,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.6
+    },
+    "2025-12-16T06:57:32Z": {
+      "service": "user-service",
+      "cpu_percent": 0.0,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.095166015625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.62
+    },
+    "2025-12-16T06:57:34Z": {
+      "service": "driver-service",
+      "cpu_percent": 0.0,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.06947265625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.45
+    },
+    "2025-12-16T06:57:36Z": {
+      "service": "trip-service",
+      "cpu_percent": 0.18,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.3099609375,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.02
+    },
+    "2025-12-16T06:57:38Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.23,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.30703125,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.0
+    },
+    "2025-12-16T06:57:40Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.16,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.33505859375,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.18
+    },
+    "2025-12-16T06:57:52Z": {
+      "service": "api-gateway",
+      "cpu_percent": 0.13,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.245703125,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 1.6
+    },
+    "2025-12-16T06:57:54Z": {
+      "service": "user-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.095166015625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.62
+    },
+    "2025-12-16T06:57:56Z": {
+      "service": "driver-service",
+      "cpu_percent": 0.01,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.06947265625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 0.45
+    },
+    "2025-12-16T06:57:58Z": {
+      "service": "trip-service",
+      "cpu_percent": 0.19,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.3099609375,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.02
+    },
+    "2025-12-16T06:58:00Z": {
+      "service": "matching-service",
+      "cpu_percent": 0.24,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.30703125,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.0
+    },
+    "2025-12-16T06:58:02Z": {
+      "service": "notification-service",
+      "cpu_percent": 0.2,
+      "cpu_cores": 0.5,
+      "memory_used_gb": 0.33515625,
+      "memory_limit_gb": 1.0,
+      "memory_percent": 2.18
+    }
+  },
+  "end_time": "2025-12-16T06:58:14Z",
+  "total_samples": 2
+}

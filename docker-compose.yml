@@ -5,6 +5,7 @@ services:
     build:
       context: ./api-gateway
       dockerfile: Dockerfile
+    container_name: api-gateway
     ports:
       - "9000:9000"
     depends_on:
@@ -26,6 +27,7 @@ services:
     build:
       context: ./trip-service
       dockerfile: Dockerfile
+    container_name: trip-service
     ports:
       - "8081:8081"
     depends_on:
@@ -58,6 +60,7 @@ services:
     build:
       context: ./matching-service
       dockerfile: Dockerfile
+    container_name: matching-service
     ports:
       - "8083:8083"
     depends_on:
@@ -87,6 +90,7 @@ services:
     build:
       context: ./notification-service
       dockerfile: Dockerfile
+    container_name: notification-service
     depends_on:
       - broker
       - schema-registry
