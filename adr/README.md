@@ -21,6 +21,7 @@ Architecture Decision Records là các tài liệu ghi lại các quyết địn
 | [0005](0005-redis-schema-refactor.md) | Tái Cấu Trúc Schema Redis cho Theo Dõi Vị Trí Tài Xế | Đề Xuất |
 | [0006](0006-modularize-terraform.md) | Mô-đun Hóa Mã Hạ Tầng Terraform | Đã Chấp Nhận |
 | [0007](0007-service-yaml-automation.md) | Cấu Hình Dịch Vụ qua service.yml và Tự Động Hóa | Đã Chấp Nhận |
+| [0008](0008-azure-simulation.md) | Mô Phỏng Chi Phí Azure Bằng Chạy Local và Bảng Giá | Đề Xuất |
 
 ## Trạng Thái ADR
 
